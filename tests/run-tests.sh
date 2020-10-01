@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 #
 # run-tests.sh
 # LLAMA Graph Analytics
@@ -43,9 +43,10 @@
 ORG_PWD="`pwd`"
 ROOT_TESTS="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 ROOT_LLAMA="$( cd "$ROOT_TESTS/.." && pwd )"
-ROOT_RESULTS=/var/www/llama-tests
-ROOT_SCRATCH=/var/www/llama-tests/scratch
-
+#ROOT_RESULTS=/var/www/llama-tests
+#ROOT_SCRATCH=/var/www/llama-tests/scratch
+ROOT_RESULTS="$ROOT_LLAMA/llama-tests"
+ROOT_SCRATCH="$ROOT_LLAMA/llama-tests/scratch"
 CHECKOUT_CLEAN=0
 CHECKOUT_SOURCE="$ROOT_LLAMA"
 

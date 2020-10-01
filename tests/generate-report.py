@@ -60,7 +60,7 @@ def usage():
 #
 
 global results_dir
-results_dir = "/var/www/llama-tests"
+results_dir = os.getcwd() + "../llama-tests"
 
 try:
     opts, args = getopt.getopt(sys.argv[1:],"d:h",["dir=","help"])
@@ -205,5 +205,5 @@ out.write(" </table>\n")
 out.write("</body>\n")
 
 out.close()
-print "Generated: " + report_file
+print ("Generated: " + report_file)
 

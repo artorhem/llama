@@ -957,8 +957,7 @@ public:
 	 */
 	bool level_exists(int level) {
 #ifdef LL_MIN_LEVEL
-		if (!ll_level_within_bounds(level, _min_level, _max_level))
-			return false;
+		if (level < _min_level) return false;
 #else
 		if (level > _max_level) return false;
 #endif

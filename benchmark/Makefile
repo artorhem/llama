@@ -8,7 +8,7 @@
 #
 
 CC         := g++
-CFLAGS     := -Wall -fopenmp -std=c++0x -I. -I../llama/include
+CFLAGS     := -Wall -std=gnu++11 -fpermissive -fopenmp -std=c++0x -I. -I../llama/include
 LFLAGS     := 
 
 
