@@ -54,7 +54,7 @@
 #include <string>
 #include <unistd.h>
 #include "xs1-common.h"
-
+#include <ctime>
 using namespace std;
 
 
