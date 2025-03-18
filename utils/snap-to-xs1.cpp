@@ -54,6 +54,7 @@
 #include <unistd.h>
 #include "xs1-common.h"
 #include <ctime>
+#include <chrono>
 
 using namespace std;
 
@@ -99,7 +100,7 @@ static void usage(const char* arg0) {
  * @return the exit code
  */
 int main(int argc, char** argv) {
-
+	auto start = std::chrono::steady_clock::now();
 	srand(time(NULL));
 
 	bool undirected = false;
@@ -288,7 +289,9 @@ int main(int argc, char** argv) {
 
 	fclose(f_in);
 	free(line);
-
+	auto end = std::chrono::steady_clock::now();
+	auto elapsed = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+	fprintf(stderr, "Elapsed time: %ld seconds\n", elapsed.count());
 	return 0;
 }
 
